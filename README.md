@@ -1,16 +1,21 @@
-# evershop-razorpay
-Razorpay extension for evershop.
+# EverShop product comment extension
 
-# Installation
-npm i evershop-razorpay
+This is the source code for the EverShop extension development guide: [EverShop product comment extension](https://evershop.io/docs/development/module/create-first-extension).
 
-Add the extension to your config/default.json file:
+## Installation
 
+```bash
+npm install evershop-razorpay
+```
+
+Add the extension to your `config/default.json` file:
+
+```json
 {
   "system": {
         "extensions": [
             {
-                "name": "razorpay",
+                "name": "razorpy",
                 "resolve": "node_modules/evershop-razorpay/razorpay",
                 "enabled": true
             }
