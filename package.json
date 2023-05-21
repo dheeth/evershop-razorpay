@@ -1,0 +1,19 @@
+{
+  "name": "evershop-razorpay",
+  "version": "1.0.0",
+  "description": "Extension for Evershop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coder-palak/evershop-razorpay.git"
+  },
+  "author": "coder-palak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coder-palak/evershop-razorpay/issues"
+  },
+  "homepage": "https://github.com/coder-palak/evershop-razorpay#readme"
+}

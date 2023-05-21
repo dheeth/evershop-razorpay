@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "razorpay_order_id": {
+      "type": "string"
+    },
+    "razorpay_payment_id": {
+      "type": "string"
+    },
+    "razorpay_signature": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "razorpay_order_id",
+    "razorpay_payment_id",
+    "razorpay_signature"
+  ],
+  "additionalProperties": true,
+  "errorMessage": {
+    "properties": {
+      "razorpay_order_id": "razorpay_order_id is invalid",
+      "razorpay_payment_id": "razorpay_payment_id is invalid",
+      "razorpay_signature": "razorpay_signature is invalid"
+    }
+  }
+}
