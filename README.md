@@ -1,4 +1,4 @@
-# EverShop product comment extension
+# EverShop Razorpay extension
 
 This is the source code for the EverShop extension development guide: [EverShop product comment extension](https://evershop.io/docs/development/module/create-first-extension).
 
