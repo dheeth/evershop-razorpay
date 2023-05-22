@@ -15,7 +15,7 @@ Add the extension to your `config/default.json` file:
   "system": {
         "extensions": [
             {
-                "name": "razorpy",
+                "name": "razorpay",
                 "resolve": "node_modules/evershop-razorpay/razorpay",
                 "enabled": true
             }

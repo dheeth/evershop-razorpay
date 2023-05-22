@@ -1,6 +1,6 @@
 {
   "name": "evershop-razorpay",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Extension for Evershop",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,6 @@
   "dependencies": {
     "razorpay": "^2.8.6",
     "react-razorpay": "^1.2.0"
-  }
+  },
+  "keywords":["evershop", "razorpay"]
 }
