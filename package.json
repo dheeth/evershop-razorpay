@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/coder-palak/evershop-razorpay/issues"
   },
-  "homepage": "https://github.com/coder-palak/evershop-razorpay#readme"
+  "homepage": "https://github.com/coder-palak/evershop-razorpay#readme",
+  "dependencies": {
+    "razorpay": "^2.8.6",
+    "react-razorpay": "^1.2.0"
+  }
 }

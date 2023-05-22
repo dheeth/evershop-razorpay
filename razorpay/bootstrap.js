@@ -4,7 +4,6 @@ const { getSetting } = require('@evershop/evershop/src/modules/setting/services/
 module.exports = () => {
   Cart.addField('payment_method', async function resolver(previousValue) {
     const paymentMethod = this.dataSource?.payment_method ?? null;
-    console.log(paymentMethod)
     if (paymentMethod !== 'razorpay') {
       return previousValue;
     } else {

@@ -43,12 +43,10 @@ module.exports = async (request, response, delegate, next) => {
     } else {
       publishKey = await getSetting('razorpayPublishableKey', '');
     }
-    console.log(razorpayConfig, secretKey, publishKey);
     const razorpay = new Razorpay({
       key_id: publishKey,
       key_secret: secretKey
     });
-    //smallestUnit.default(order.grand_total, order.currency)
     const options = {
       amount: (parseInt(order.grand_total) * 100),
       currency: 'INR',
@@ -59,15 +57,14 @@ module.exports = async (request, response, delegate, next) => {
       if (err) {
         return response.status(500).json(err);
       }
-      console.log(order)
+      const obj = {...order, key: publishKey}; 
       await update('order')
       .given({razorpay_order_id: order.id })
       .where('uuid', '=', order_id)
       .execute(pool);
-      return response.status(OK).json(order);
+      return response.status(OK).json(obj);
     });
   }
-// #-bJ8bv4YrtT@#A
   /**
    *
    * @param {number} min

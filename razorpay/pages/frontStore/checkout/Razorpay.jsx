@@ -55,7 +55,6 @@ function RazorpayApp({ orderId, orderPlaced, cartId, checkoutSuccessUrl }) {
     },
     pause: orderPlaced === true
   });
-  console.log(orderId, orderPlaced, cartId, checkoutSuccessUrl);
   useEffect(() => {
     // Create PaymentIntent as soon as the order is placed
     if (orderId && orderPlaced) {
@@ -70,18 +69,18 @@ function RazorpayApp({ orderId, orderPlaced, cartId, checkoutSuccessUrl }) {
         .then((res) => res.json())
         .then((data) => {
           setRazorpayOrderId(data.id);
-          handlePayment(result, data.amount, data.id);
+          handlePayment(result, data.amount, data.id, data.key);
         });
     }
   }, [orderId]);
 
   const Razorpay = useRazorpay();
 
-  const handlePayment = (result, amount, razorpayOrderId) => {
+  const handlePayment = (result, amount, razorpayOrderId, razorpayKey) => {
     const billingAddress =
       result.data.cart.billingAddress || result.data.cart.shippingAddress;
     const options = {
-      key: '',//process.env?.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
+      key: razorpayKey,//process.env?.RAZORPAY_KEY, // Enter the Key ID generated from the Dashboard
       amount: Number(amount), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
       currency: 'INR',
       name: 'Company Name',

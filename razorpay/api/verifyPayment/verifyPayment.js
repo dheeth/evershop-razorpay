@@ -20,5 +20,5 @@ module.exports = async (request, response) => {
     .update(signature.toString())
     .digest('hex');
   const isAuthentic = expectedSignature === razorpay_signature;
-  return response.status(OK).json({ isPaymentVerified: isAuthentic });
+  response.status(OK).json({ isPaymentVerified: isAuthentic });
 };

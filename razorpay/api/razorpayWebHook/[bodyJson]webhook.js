@@ -98,9 +98,9 @@ module.exports = async (request, response, stack, next) => {
       }
     }
     await commit(connection);
-    return response.status(OK).json({message: "OK"});
+    response.status(OK).json({message: "OK"});
   } catch (err) {
     await rollback(connection);
-    return response.status(INTERNAL_SERVER_ERROR).send('Something went wrong');
+    response.status(INTERNAL_SERVER_ERROR).send('Something went wrong');
   }
 };
